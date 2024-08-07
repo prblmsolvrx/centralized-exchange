@@ -1,0 +1,26 @@
+version: '3.8'  # Specifies the Docker Compose file format version
+
+services:
+  # Service definition for TimescaleDB
+  timescaledb:
+    image: timescale/timescaledb:latest-pg12  # Uses the latest TimescaleDB image with PostgreSQL 12
+    container_name: timescaledb  # Name of the container
+    ports:
+      - "5432:5432"  # Maps port 5432 of the container to port 5432 on the host
+    environment:
+      POSTGRES_DB: my_database  # Name of the default database
+      POSTGRES_USER: your_user  # Username for the PostgreSQL database
+      POSTGRES_PASSWORD: your_password  # Password for the PostgreSQL database
+    volumes:
+      - timescale-data:/var/lib/postgresql/data  # Mounts the volume for persistent storage of database data
+
+  # Service definition for Redis
+  redis:
+    image: redis:latest  # Uses the latest Redis image
+    container_name: redis  # Name of the container
+    ports:
+      - "6379:6379"  # Maps port 6379 of the container to port 6379 on the host
+
+# Volume definitions
+volumes:
+  timescale-data:  # Defines a named volume for TimescaleDB data storage
