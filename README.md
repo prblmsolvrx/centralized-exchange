@@ -1,12 +1,10 @@
 # Centralized Cryptocurrency Exchange
 
 Features :-
-- High Liquidity and Order Matching Engines
-- Advanced Trading Features
-- Security Infrastructure
-- API Access
-- Real-Time Data Feeds
-- Custodial Wallet Management
-- Automated Liquidation Mechanisms
-- Blockchain Integration
-- Order Types and Execution Algorithms
+- Market Maker Logic
+- Websockets Logic
+- Trading Platform Frontend UI
+- Docker-compose to Set up Locally
+- DB Logic & Timeseries DB to Store Data
+- API to Hit to Execute the Trade
+- Engine the central point of Execution of the Entire Process
